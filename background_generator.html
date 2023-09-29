@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+*
+{
+    padding: 0;
+    margin: 0;
+    
+}
+#bodybg
+{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right,red,yellow);
+position: relative;
+}
+#centerdiv
+{
+text-align: center;
+   position: absolute;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+ 
+  
+
+}
+#centerdiv h1
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+#centerdiv h2
+{
+    font-family: 'Poppins', sans-serif;
+}
+</style>
+<body id="bodybg">
+    <div id="centerdiv">
+        <h1>BACKGROUND COLOR GENERETOR</h1>
+        <br><br>
+        <h2>PICK THE COLOR</h2>
+        <br><br>
+        <input type="color" name="" id="colorone" value="#ec008c">
+        <input type="color" name="" id="colortwo" value="#fc6767">
+        <br><br>
+        <h3 id="showvalue"></h3>
+    </div>
+    <script>
+        const colorone=document.getElementById('colorone');
+        const colortwo=document.getElementById('colortwo');
+        const bodybg=document.getElementById('bodybg');
+        const showdata=document.getElementById(`showvalue`);
+       function setbgcolor(){
+        bodybg.style.background = `linear-gradient(to right,${colorone.value}, ${colortwo.value})`;
+        showdata.textContent = `Copy  your code:linear-gradient(to right,${ colorone.value},${ colortwo.value})`;
+       }
+      
+       colorone.addEventListener('input',setbgcolor);
+       colortwo.addEventListener('input',setbgcolor);
+
+    
+    </script>
+</body>
+</html>
